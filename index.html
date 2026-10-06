@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이윤숙 | 맞춤형 교육 & 공간해설 전문가 이력서카드</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                        },
+                        sage: {
+                            50: '#f4f7f5',
+                            100: '#e3ebe6',
+                            500: '#4e7e65',
+                            600: '#3d6550',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        .resume-card {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+        }
+        .badge-pulse {
+            animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-sky-100 selection:text-sky-900">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-sky-600 inline-block"></span>
+                <span class="font-bold text-slate-900 tracking-tight text-lg" id="navProfileName">이윤숙</span>
+                <span class="text-xs px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 font-medium">교육 & 공간해설 전문가</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="openAdminPasswordModal()" class="text-xs font-medium px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors flex items-center gap-1">
+                    <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+                    <span>사진·정보 수정</span>
+                </button>
+                <a href="#inquiry-section" class="text-xs font-semibold px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 hover:bg-sky-100 transition-colors">
+                    수업·강의 문의
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-2xl mx-auto w-full px-4 pt-4 pb-12 space-y-6">
+
+        <!-- Profile Hero Header -->
+        <section class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm relative">
+            <!-- Banner Image -->
+            <div class="h-44 sm:h-52 w-full relative overflow-hidden bg-gradient-to-r from-sky-200 via-teal-100 to-emerald-100 group">
+                <img id="bannerImg" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80" alt="배너 이미지" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                <button onclick="openAdminPasswordModal()" class="absolute top-3 right-3 px-3 py-1.5 rounded-xl bg-slate-900/60 backdrop-blur-md text-white text-xs font-semibold opacity-80 hover:opacity-100 transition-opacity flex items-center gap-1.5">
+                    <i data-lucide="image" class="w-3.5 h-3.5"></i>
+                    <span>배너 사진 변경</span>
+                </button>
+            </div>
+
+            <!-- Profile Info Content -->
+            <div class="px-6 pb-6 pt-0 relative">
+                <!-- Avatar with Direct Edit Button -->
+                <div class="relative -mt-16 mb-4 inline-block group">
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl ring-4 ring-white shadow-lg overflow-hidden bg-white relative">
+                        <img id="profileImg" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="이윤숙 강사" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80'" />
+                        <!-- Photo Quick Edit Overlay -->
+                        <button onclick="openAdminPasswordModal()" class="absolute inset-0 bg-slate-900/60 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl cursor-pointer" title="프로필 사진 변경">
+                            <i data-lucide="camera" class="w-6 h-6 mb-1"></i>
+                            <span class="text-[11px] font-bold">사진 변경</span>
+                        </button>
+                    </div>
+                    <span class="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-white badge-pulse z-10" title="수업/강의 가능"></span>
+                </div>
+
+                <!-- Badge & Title -->
+                <div class="space-y-2">
+                    <div class="flex flex-wrap items-center gap-1.5">
+                        <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-800 flex items-center gap-1">
+                            <i data-lucide="award" class="w-3.5 h-3.5 text-sky-600"></i>
+                            사회과 중등 2급 정교사
+                        </span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 flex items-center gap-1">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
+                            시흥시 맑은물상상누리 공간해설사
+                        </span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 flex items-center gap-1">
+                            <i data-lucide="heart-handshake" class="w-3.5 h-3.5 text-indigo-600"></i>
+                            학습코칭 & 심리상담
+                        </span>
+                    </div>
+
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight" id="displayProfileName">
+                        이윤숙
+                    </h1>
+
+                    <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed" id="displayTagline">
+                        유아부터 성인까지, 마음을 열고 배움을 연결하는 맞춤형 교육·공간해설 전문가
+                    </p>
+                </div>
+
+                <!-- Quick Contacts Bar -->
+                <div class="mt-6 pt-5 border-t border-slate-100 space-y-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600 font-medium">
+                        <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                            <i data-lucide="phone" class="w-4 h-4 text-sky-600 shrink-0"></i>
+                            <span>연락처:</span>
+                            <strong class="text-slate-900 font-semibold" id="displayPhone">010-8542-3284</strong>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                            <i data-lucide="mail" class="w-4 h-4 text-sky-600 shrink-0"></i>
+                            <span>이메일:</span>
+                            <strong class="text-slate-900 font-semibold truncate" id="displayEmail">candyslee@hanmail.net</strong>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 pt-1">
+                        <a id="btnCall" href="tel:01085423284" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-xs transition-colors shadow-sm shadow-sky-200">
+                            <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+                            <span>전화걸기</span>
+                        </a>
+                        <button onclick="copyPhone()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition-colors">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span>전화번호 복사</span>
+                        </button>
+                        <button onclick="copyEmail()" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition-colors">
+                            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                            <span>이메일 복사</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience Experience Filter / Quick Summary -->
+        <section class="space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-sky-600"></i>
+                    대상별 교육 & 해설 스펙트럼
+                </h2>
+                <span class="text-xs text-slate-400">전 연령 커버리지</span>
+            </div>
+
+            <!-- Audience Filter Buttons -->
+            <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-none" id="filterContainer">
+                <button onclick="filterExperience('all')" class="filter-btn active-filter px-3.5 py-1.5 rounded-full text-xs font-bold transition-all bg-sky-600 text-white shadow-sm" data-filter="all">전체보기</button>
+                <button onclick="filterExperience('early')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-filter="early">미취학 아동</button>
+                <button onclick="filterExperience('elementary')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-filter="elementary">초등 & 기초학력</button>
+                <button onclick="filterExperience('secondary')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-filter="secondary">중·고등 사회</button>
+                <button onclick="filterExperience('docent')" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-filter="docent">공간해설 & 체험</button>
+            </div>
+        </section>
+
+        <!-- Experience Cards List -->
+        <section class="space-y-4" id="experienceList">
+
+            <!-- Card 1: Secondary Education / Social Studies -->
+            <div class="exp-card resume-card p-5 rounded-2xl border-l-4 border-l-indigo-500 space-y-3" data-category="secondary">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="space-y-1">
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700">
+                            <i data-lucide="graduation-cap" class="w-3 h-3"></i> 중·고등 전문 지도
+                        </span>
+                        <h3 class="text-base font-bold text-slate-900">사회과 중등 2급 정교사 & 주요 학군지 사회탐구 10년+</h3>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 rounded bg-slate-100 text-slate-600 shrink-0">10년 이상</span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    사회과 중등 2급 정교사 자격증을 기반으로 주요 학군지에서 10년 이상 중·고등학생 대상 사회탐구 수업을 전담해 왔습니다. 내신과 수능 개념을 정밀하게 다지며 최근에도 중학생 대상 사회과 그룹과외를 성공적으로 진행 중입니다.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#사회과정교사2급</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#학군지10년경력</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#사회탐구전문</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#중등사회그룹과외</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Elementary & Basic Learning -->
+            <div class="exp-card resume-card p-5 rounded-2xl border-l-4 border-l-sky-500 space-y-3" data-category="elementary">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="space-y-1">
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-sky-50 text-sky-700">
+                            <i data-lucide="calculator" class="w-3 h-3"></i> 초등 지도 & 기초학력
+                        </span>
+                        <h3 class="text-base font-bold text-slate-900">초등수학지도사 & 초등학교 기초학력 전담 강사</h3>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 rounded bg-sky-50 text-sky-700 shrink-0">최근 5년~현재</span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    초등수학지도사 자격증을 보유하고 최근 5년간 초등학생들의 수학 및 학업을 전문 학원에서 지도하고 있습니다. 또한 초등학교 현장에서 기초학력 전담 강사로 다년간 근무하며 학습 지원이 필요한 학생들의 기초 체력을 확실히 끌어올렸습니다.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#초등수학지도사</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#초등5년지도</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#학교기초학력강사</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#학원강사경력</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Early Childhood (미취학) -->
+            <div class="exp-card resume-card p-5 rounded-2xl border-l-4 border-l-emerald-500 space-y-3" data-category="early">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="space-y-1">
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700">
+                            <i data-lucide="smile" class="w-3 h-3"></i> 미취학 아동 전문
+                        </span>
+                        <h3 class="text-base font-bold text-slate-900">시흥시보건소 건강활동가 (어린이집 & 유치원)</h3>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 rounded bg-emerald-50 text-emerald-700 shrink-0">활동 중</span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    시흥시보건소 소속으로 지역 내 어린이집과 유치원을 직접 방문하며 건강활동가로 활동 중입니다. 미취학 아동의 눈높이에 맞춘 세심한 상호작용과 흥미 유발 지도 능력을 겸비하고 있습니다.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#시흥시보건소</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#어린이집유치원강사</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#건강활동가</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#미취학티칭전문</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Space Docent & Experiential Education -->
+            <div class="exp-card resume-card p-5 rounded-2xl border-l-4 border-l-amber-500 space-y-3" data-category="docent">
+                <div class="flex items-start justify-between gap-2">
+                    <div class="space-y-1">
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800">
+                            <i data-lucide="compass" class="w-3 h-3"></i> 공간해설 & 체험교육
+                        </span>
+                        <h3 class="text-base font-bold text-slate-900">시흥시 맑은물상상누리 공간해설사 & 교육청 창의체험 강사</h3>
+                    </div>
+                    <span class="text-xs font-semibold px-2 py-1 rounded bg-amber-50 text-amber-800 shrink-0">2019~현재</span>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    2019년부터 시흥시 맑은물상상누리 소속 공간해설사로 재직하며 미취학 아동부터 성인까지 전 연령을 대상으로 몰입도 높은 공간 스토리텔링 해설을 제공합니다. 교육청 연계 초등 창의체험활동 수업도 활발히 진행 중입니다.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#맑은물상상누리</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#공간해설사</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#교육청창의체험활동</span>
+                    <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-600">#전연령해설</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Professional Certificates Grid Section -->
+        <section class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-sky-600"></i>
+                    보유 자격증 & 전문 자격
+                </h2>
+                <span class="text-xs text-sky-600 font-semibold">공인 자격 인증</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="certContainer">
+                
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0 font-bold">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-900">사회과 중등 2급 정교사</h4>
+                        <p class="text-[11px] text-slate-500 mt-0.5">교육부 교원자격증 / 중고등 교과 지도</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center shrink-0 font-bold">
+                        <i data-lucide="calculator" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-900">초등수학지도사</h4>
+                        <p class="text-[11px] text-slate-500 mt-0.5">초등 수학 개념 & 맞춤 풀이 지도</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center shrink-0 font-bold">
+                        <i data-lucide="target" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-900">학습코칭지도사</h4>
+                        <p class="text-[11px] text-slate-500 mt-0.5">자기주도학습법 & 습관 형성 코칭</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-9 h-9 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center shrink-0 font-bold">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-900">심리상담사</h4>
+                        <p class="text-[11px] text-slate-500 mt-0.5">학생 정서 정착 & 정밀 라포 형성</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Teaching Strengths Summary -->
+        <section class="bg-gradient-to-br from-slate-900 to-sky-950 text-white rounded-3xl p-6 sm:p-7 shadow-md space-y-4">
+            <div class="space-y-1">
+                <span class="text-sky-400 text-xs font-bold tracking-wider uppercase">Key Strength</span>
+                <h2 class="text-lg font-extrabold">강사 이윤숙의 3가지 핵심 강점</h2>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3 pt-1">
+                <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10">
+                    <span class="w-6 h-6 rounded-full bg-sky-500 text-white font-bold text-xs flex items-center justify-center shrink-0">1</span>
+                    <div class="space-y-0.5">
+                        <h3 class="text-xs font-bold text-sky-200">전 연령 맞춤형 교수법 (유아 ~ 성인)</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">미취학 건강활동부터 중고등 전문 과외, 성인 대상 공간해설까지 대상에 맞는 눈높이 소통 능력을 검증받았습니다.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10">
+                    <span class="w-6 h-6 rounded-full bg-sky-500 text-white font-bold text-xs flex items-center justify-center shrink-0">2</span>
+                    <div class="space-y-0.5">
+                        <h3 class="text-xs font-bold text-sky-200">학습코칭 + 심리상담의 입체적 케어</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">단순 지식 전달에 그치지 않고, 심리상담과 학습코칭 자격을 활용하여 학생 개별 심리와 학습 동기를 함께 케어합니다.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-3.5 rounded-2xl border border-white/10">
+                    <span class="w-6 h-6 rounded-full bg-sky-500 text-white font-bold text-xs flex items-center justify-center shrink-0">3</span>
+                    <div class="space-y-0.5">
+                        <h3 class="text-xs font-bold text-sky-200">풍부한 현장 실무 및 지역기관 신뢰성</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">시흥시보건소, 시흥시 맑은물상상누리, 교육청 창의체험 등 공공·지역 기관과의 지속적인 협업으로 높은 신뢰도를 갖췄습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inquiry Form Section -->
+        <section id="inquiry-section" class="bg-gradient-to-br from-sky-600 via-sky-700 to-indigo-700 rounded-3xl p-6 sm:p-8 text-white shadow-lg shadow-sky-200 space-y-5">
+            <div class="space-y-2">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-white backdrop-blur-sm inline-block">
+                    Inquiry & Contact
+                </span>
+                <h2 class="text-2xl font-black tracking-tight">수업 · 강의 · 공간해설 문의하기</h2>
+                <p class="text-sky-100 text-xs sm:text-sm">
+                    중등 사회 과외, 초등 수학/기초학력 지도, 공간해설 및 창의체험 수업 문의를 남겨주시면 정성껏 답변드리겠습니다.
+                </p>
+            </div>
+
+            <form id="inquiryForm" class="space-y-3 bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/20">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-medium text-sky-100 mb-1">성함 / 기관명</label>
+                        <input type="text" id="inqName" required placeholder="예: 학부모 / OO초등학교" class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-sky-100 mb-1">연락처</label>
+                        <input type="tel" id="inqPhone" required placeholder="010-0000-0000" class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-sky-100 mb-1">희망 분야</label>
+                    <select id="inqCategory" class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300">
+                        <option value="중등사회과외">중등 사회과 그룹/개인 과외</option>
+                        <option value="초등수학기초학력">초등 수학 및 기초학력 지도</option>
+                        <option value="공간해설창의체험">공간해설 및 교육청 창의체험활동</option>
+                        <option value="유아건강활동">미취학/유아 건강활동 수업</option>
+                        <option value="기타문의">기타 학습코칭 및 교육 문의</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-sky-100 mb-1">문의 내용 (대상학년, 시간, 세부요청사항 등)</label>
+                    <textarea id="inqMsg" rows="3" required placeholder="상세한 문의 사항을 입력해주세요." class="w-full px-3.5 py-2.5 rounded-xl bg-white text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300 resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-colors shadow-md flex items-center justify-center gap-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>문의 메시지 보내기</span>
+                </button>
+            </form>
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-sky-100 pt-2 border-t border-white/20 gap-2">
+                <div class="flex items-center gap-1.5">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-sky-200"></i> 직통 전화: <strong class="text-white" id="displayPhoneForm">010-8542-3284</strong>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-sky-200"></i> 이메일: <strong class="text-white" id="displayEmailForm">candyslee@hanmail.net</strong>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer & Discreet Admin Trigger -->
+    <footer class="bg-white border-t border-slate-100 py-8 text-center text-xs text-slate-400 space-y-2">
+        <p>© 2026 이윤숙 (Lee Yoon-sook). All rights reserved.</p>
+        <p class="text-[11px] text-slate-300">사회과 중등정교사 | 초등수학지도사 | 시흥시 맑은물상상누리 공간해설사</p>
+        
+        <!-- Discreet Admin Mode Trigger at Bottom -->
+        <div class="pt-3 flex justify-center items-center">
+            <button onclick="openAdminPasswordModal()" class="text-[10px] text-slate-300 hover:text-slate-500 transition-colors flex items-center gap-1 px-2.5 py-1 rounded-md" title="관리자">
+                <i data-lucide="lock" class="w-3 h-3 opacity-50"></i>
+                <span>프로필 편집 (Admin)</span>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Password Prompt Modal -->
+    <div id="passwordModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-sky-600"></i>
+                    관리자 인증
+                </h3>
+                <button onclick="closePasswordModal()" class="text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <p class="text-xs text-slate-500">이력서 카드 관리자 비밀번호를 입력해주세요.</p>
+            <div>
+                <input type="password" id="adminPasswordInput" placeholder="비밀번호 (초기: 0000)" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 text-center font-mono tracking-widest" onkeyup="if(event.key==='Enter') verifyAdminPassword()">
+            </div>
+            <div class="flex gap-2">
+                <button onclick="closePasswordModal()" class="flex-1 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50">
+                    취소
+                </button>
+                <button onclick="verifyAdminPassword()" class="flex-1 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold transition-colors">
+                    로그인
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Admin Editor Modal -->
+    <div id="adminEditorModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-7 shadow-2xl space-y-5 my-8">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                    <i data-lucide="user-cog" class="w-5 h-5 text-sky-600"></i>
+                    이력서 카드 관리자 수정
+                </h3>
+                <button onclick="closeAdminEditorModal()" class="text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <form onsubmit="event.preventDefault(); saveAdminData();" class="space-y-5">
+                
+                <!-- Profile Text Info -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-slate-800 text-xs border-l-2 border-sky-600 pl-2">1. 기본 인적사항 수정</h4>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">성함</label>
+                        <input type="text" id="editName" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-sky-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">한줄 소개 (태그라인)</label>
+                        <textarea id="editTagline" rows="2" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-sky-500 outline-none resize-none"></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">연락처</label>
+                            <input type="text" id="editPhone" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-sky-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">이메일</label>
+                            <input type="email" id="editEmail" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-sky-500 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Photo Settings Section -->
+                <div class="space-y-3 pt-2">
+                    <h4 class="font-bold text-slate-800 text-xs border-l-2 border-sky-600 pl-2">2. 프로필 사진 변경</h4>
+                    
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-sky-500 shrink-0 bg-white shadow-sm relative">
+                                <img id="adminProfilePreview" src="" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80'">
+                            </div>
+                            <div class="flex-1 space-y-2">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">방법 A: 파일 선택 (자동 용량 최적화)</label>
+                                    <label class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-xs cursor-pointer transition-colors shadow-sm">
+                                        <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                                        <span>내 기기에서 사진 찾기</span>
+                                        <input type="file" id="editProfileImgFile" accept="image/*" onchange="handleProfileFileSelect(event)" class="hidden">
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">방법 B: 인터넷 사진 주소(URL) 입력</label>
+                                    <input type="url" id="editProfileUrlInput" oninput="handleProfileUrlInput(this.value)" placeholder="https://example.com/photo.jpg" class="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs focus:ring-2 focus:ring-sky-500 outline-none bg-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Presets for Profile -->
+                        <div class="pt-1 border-t border-slate-200/60">
+                            <span class="text-[11px] font-semibold text-slate-500 block mb-1.5">추천 아바타 이미지 선택:</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="setProfilePreset('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] hover:border-sky-500 transition-colors font-medium">프로필 A (기본)</button>
+                                <button type="button" onclick="setProfilePreset('https://images.unsplash.com/photo-1580894732413-a7235a9d8c01?auto=format&fit=crop&w=600&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] hover:border-sky-500 transition-colors font-medium">프로필 B (단정)</button>
+                                <button type="button" onclick="setProfilePreset('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] hover:border-sky-500 transition-colors font-medium">프로필 C (자연스러움)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner Photo Settings Section -->
+                <div class="space-y-3 pt-2">
+                    <h4 class="font-bold text-slate-800 text-xs border-l-2 border-sky-600 pl-2">3. 상단 배너 사진 변경</h4>
+                    
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-28 h-14 rounded-xl overflow-hidden ring-2 ring-sky-500 shrink-0 bg-white shadow-sm relative">
+                                <img id="adminBannerPreview" src="" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80'">
+                            </div>
+                            <div class="flex-1 space-y-2">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">방법 A: 파일 선택 (자동 용량 최적화)</label>
+                                    <label class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs cursor-pointer transition-colors shadow-sm">
+                                        <i data-lucide="image" class="w-3.5 h-3.5"></i>
+                                        <span>내 기기에서 배너 찾기</span>
+                                        <input type="file" id="editBannerImgFile" accept="image/*" onchange="handleBannerFileSelect(event)" class="hidden">
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">방법 B: 인터넷 사진 주소(URL) 입력</label>
+                                    <input type="url" id="editBannerUrlInput" oninput="handleBannerUrlInput(this.value)" placeholder="https://example.com/banner.jpg" class="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs focus:ring-2 focus:ring-sky-500 outline-none bg-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Presets for Banner -->
+                        <div class="pt-1 border-t border-slate-200/60">
+                            <span class="text-[11px] font-semibold text-slate-500 block mb-1.5">추천 배경 배너 선택:</span>
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="setBannerPreset('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] hover:border-sky-500 transition-colors font-medium">강의실/교육</button>
+                                <button type="button" onclick="setBannerPreset('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] hover:border-sky-500 transition-colors font-medium">자연/공간해설</button>
+                                <button type="button" onclick="setBannerPreset('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] hover:border-sky-500 transition-colors font-medium">도서관/배움</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-3 flex items-center justify-between gap-3 border-t border-slate-100">
+                    <button type="button" onclick="resetDefaultData()" class="px-3.5 py-2 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-100 font-semibold text-xs">
+                        전체 초기화
+                    </button>
+                    <div class="flex gap-2">
+                        <button type="button" onclick="closeAdminEditorModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 font-semibold text-xs hover:bg-slate-50">
+                            취소
+                        </button>
+                        <button type="submit" class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-md shadow-sky-200 transition-colors">
+                            저장하기 & 적용
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-xs font-semibold pointer-events-none">
+        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+        <span id="toastMsg">복사되었습니다.</span>
+    </div>
+
+    <script>
+        // Initial Default Profile Data for 이윤숙
+        const DEFAULT_DATA = {
+            name: "이윤숙",
+            tagline: "유아부터 성인까지, 마음을 열고 배움을 연결하는 맞춤형 교육·공간해설 전문가",
+            phone: "010-8542-3284",
+            email: "candyslee@hanmail.net",
+            profileImg: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+            bannerImg: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80"
+        };
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Load profile data from localStorage or fallback
+        function loadProfileData() {
+            try {
+                const savedData = localStorage.getItem('leeyoonsook_profile_data');
+                return savedData ? JSON.parse(savedData) : DEFAULT_DATA;
+            } catch (e) {
+                return DEFAULT_DATA;
+            }
+        }
+
+        // Render Profile Data into DOM
+        function renderProfileData() {
+            const data = loadProfileData();
+
+            document.getElementById('navProfileName').textContent = data.name;
+            document.getElementById('displayProfileName').textContent = data.name;
+            document.getElementById('displayTagline').textContent = data.tagline;
+            document.getElementById('displayPhone').textContent = data.phone;
+            document.getElementById('displayEmail').textContent = data.email;
+
+            document.getElementById('displayPhoneForm').textContent = data.phone;
+            document.getElementById('displayEmailForm').textContent = data.email;
+
+            document.getElementById('btnCall').href = "tel:" + data.phone.replace(/[^0-9]/g, '');
+
+            const profileImgEl = document.getElementById('profileImg');
+            const bannerImgEl = document.getElementById('bannerImg');
+
+            profileImgEl.src = data.profileImg || DEFAULT_DATA.profileImg;
+            bannerImgEl.src = data.bannerImg || DEFAULT_DATA.bannerImg;
+        }
+
+        // Toast Helper Function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Copy Phone Number
+        function copyPhone() {
+            const data = loadProfileData();
+            navigator.clipboard.writeText(data.phone).then(() => {
+                showToast('연락처 (' + data.phone + ')가 클립보드에 복사되었습니다.');
+            }).catch(() => {
+                showToast('복사에 실패했습니다.');
+            });
+        }
+
+        // Copy Email
+        function copyEmail() {
+            const data = loadProfileData();
+            navigator.clipboard.writeText(data.email).then(() => {
+                showToast('이메일 (' + data.email + ')이 클립보드에 복사되었습니다.');
+            }).catch(() => {
+                showToast('복사에 실패했습니다.');
+            });
+        }
+
+        // Filter Experience Cards
+        function filterExperience(category) {
+            const cards = document.querySelectorAll('.exp-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-sky-600', 'text-white', 'shadow-sm');
+                    btn.classList.remove('bg-white', 'text-slate-600', 'border');
+                } else {
+                    btn.classList.remove('bg-sky-600', 'text-white', 'shadow-sm');
+                    btn.classList.add('bg-white', 'text-slate-600', 'border');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Inquiry Form Handling
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('inqName').value;
+            const category = document.getElementById('inqCategory').value;
+            showToast(name + '님, [' + category + '] 문의가 접수되었습니다!');
+            this.reset();
+        });
+
+        // Admin Password Verification
+        function openAdminPasswordModal() {
+            document.getElementById('adminPasswordInput').value = '';
+            document.getElementById('passwordModal').classList.remove('hidden');
+            setTimeout(() => document.getElementById('adminPasswordInput').focus(), 100);
+        }
+
+        function closePasswordModal() {
+            document.getElementById('passwordModal').classList.add('hidden');
+        }
+
+        function verifyAdminPassword() {
+            const inputPwd = document.getElementById('adminPasswordInput').value;
+            if (inputPwd === "0000") {
+                closePasswordModal();
+                openAdminEditorModal();
+            } else {
+                showToast("비밀번호가 올바르지 않습니다. (초기: 0000)");
+            }
+        }
+
+        let tempProfileImg = "";
+        let tempBannerImg = "";
+
+        // Canvas Image Compression to avoid quota issues
+        function compressAndSetImage(file, maxWidth, maxHeight, quality, callback) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > maxWidth || height > maxHeight) {
+                        if (width / height > maxWidth / maxHeight) {
+                            height = Math.round((height * maxWidth) / width);
+                            width = maxWidth;
+                        } else {
+                            width = Math.round((width * maxHeight) / height);
+                            height = maxHeight;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    callback(compressedDataUrl);
+                };
+                img.onerror = function() {
+                    showToast('이미지를 로드하지 못했습니다.');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Profile Photo Handlers
+        function handleProfileFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                compressAndSetImage(file, 300, 300, 0.75, function(compressedUrl) {
+                    tempProfileImg = compressedUrl;
+                    document.getElementById('adminProfilePreview').src = tempProfileImg;
+                    document.getElementById('editProfileUrlInput').value = '';
+                    showToast('프로필 사진이 최적화되어 등록되었습니다.');
+                });
+            }
+        }
+
+        function handleProfileUrlInput(url) {
+            if (url.trim()) {
+                tempProfileImg = url.trim();
+                document.getElementById('adminProfilePreview').src = tempProfileImg;
+            }
+        }
+
+        function setProfilePreset(url) {
+            tempProfileImg = url;
+            document.getElementById('adminProfilePreview').src = tempProfileImg;
+            document.getElementById('editProfileUrlInput').value = url;
+            showToast('선택한 추천 프로필 사진으로 설정되었습니다.');
+        }
+
+        // Banner Photo Handlers
+        function handleBannerFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                compressAndSetImage(file, 800, 400, 0.7, function(compressedUrl) {
+                    tempBannerImg = compressedUrl;
+                    document.getElementById('adminBannerPreview').src = tempBannerImg;
+                    document.getElementById('editBannerUrlInput').value = '';
+                    showToast('배너 사진이 최적화되어 등록되었습니다.');
+                });
+            }
+        }
+
+        function handleBannerUrlInput(url) {
+            if (url.trim()) {
+                tempBannerImg = url.trim();
+                document.getElementById('adminBannerPreview').src = tempBannerImg;
+            }
+        }
+
+        function setBannerPreset(url) {
+            tempBannerImg = url;
+            document.getElementById('adminBannerPreview').src = tempBannerImg;
+            document.getElementById('editBannerUrlInput').value = url;
+            showToast('선택한 추천 배너 사진으로 설정되었습니다.');
+        }
+
+        // Admin Editor Modal Opening & Closing
+        function openAdminEditorModal() {
+            const data = loadProfileData();
+
+            document.getElementById('editName').value = data.name;
+            document.getElementById('editTagline').value = data.tagline;
+            document.getElementById('editPhone').value = data.phone;
+            document.getElementById('editEmail').value = data.email;
+
+            tempProfileImg = data.profileImg || DEFAULT_DATA.profileImg;
+            tempBannerImg = data.bannerImg || DEFAULT_DATA.bannerImg;
+
+            document.getElementById('adminProfilePreview').src = tempProfileImg;
+            document.getElementById('adminBannerPreview').src = tempBannerImg;
+
+            document.getElementById('editProfileUrlInput').value = tempProfileImg.startsWith('data:') ? '' : tempProfileImg;
+            document.getElementById('editBannerUrlInput').value = tempBannerImg.startsWith('data:') ? '' : tempBannerImg;
+
+            if (document.getElementById('editProfileImgFile')) document.getElementById('editProfileImgFile').value = '';
+            if (document.getElementById('editBannerImgFile')) document.getElementById('editBannerImgFile').value = '';
+
+            document.getElementById('adminEditorModal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeAdminEditorModal() {
+            document.getElementById('adminEditorModal').classList.add('hidden');
+        }
+
+        // Save Admin Data & Reflect Changes
+        function saveAdminData() {
+            const updatedData = {
+                name: document.getElementById('editName').value.trim() || DEFAULT_DATA.name,
+                tagline: document.getElementById('editTagline').value.trim() || DEFAULT_DATA.tagline,
+                phone: document.getElementById('editPhone').value.trim() || DEFAULT_DATA.phone,
+                email: document.getElementById('editEmail').value.trim() || DEFAULT_DATA.email,
+                profileImg: tempProfileImg || DEFAULT_DATA.profileImg,
+                bannerImg: tempBannerImg || DEFAULT_DATA.bannerImg,
+            };
+
+            try {
+                localStorage.setItem('leeyoonsook_profile_data', JSON.stringify(updatedData));
+                renderProfileData();
+                closeAdminEditorModal();
+                showToast('수정된 사진과 인적사항이 저장되어 화면에 적용되었습니다!');
+            } catch (err) {
+                console.error('Storage quota error:', err);
+                showToast('사진 용량이 큽니다. 추천 이미지를 선택하거나 이미지 URL을 이용해 주세요.');
+            }
+        }
+
+        function resetDefaultData() {
+            if (confirm("기본 프로필 정보 및 초기 사진으로 원복하시겠습니까?")) {
+                localStorage.removeItem('leeyoonsook_profile_data');
+                renderProfileData();
+                closeAdminEditorModal();
+                showToast('기본 프로필 및 사진으로 초기화되었습니다.');
+            }
+        }
+
+        // Page load initialization
+        window.onload = function() {
+            renderProfileData();
+        };
+    </script>
+</body>
+</html>
